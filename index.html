@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="container">
+        <header>
+            <div class="logo">🏥 Hospital Management System</div>
+            <div class="subtitle">Modern Health System</div>
+        </header>
+
+        <nav class="nav-tabs">
+            <input type="radio" name="tab" id="dashboard" checked style="display: none;">
+            <label for="dashboard" class="nav-tab active">🏠 Dashboard</label>
+
+            <input type="radio" name="tab" id="patients" style="display: none;">
+            <label for="patients" class="nav-tab">👥 Patient Details</label>
+
+            <input type="radio" name="tab" id="doctors" style="display: none;">
+            <label for="doctors" class="nav-tab">👨‍⚕️ Doctor Details</label>
+
+            <input type="radio" name="tab" id="appointments" style="display: none;">
+            <label for="appointments" class="nav-tab">📅 Appointment</label>
+
+            <input type="radio" name="tab" id="billing" style="display: none;">
+            <label for="billing" class="nav-tab">💰 Billing</label>
+
+            <input type="radio" name="tab" id="pharmacy" style="display: none;">
+            <label for="pharmacy" class="nav-tab">💊 Pharmacy</label>
+        </nav>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-content" class="content-section active">
+            <h2 class="section-title">Dashboard</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">125</div>
+                    <div class="stat-label">Total Patient</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Doctor</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Today Appointment</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">32</div>
+                    <div class="stat-label">available Beds</div>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="card">
+                    <h3 class="card-title">Today Appointment</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Patient Name</th>
+                                <th>Doctor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10:00 AM</td>
+                                <td>Dr. Arabinda Roy</td>
+                                <td>Dr. J.K.Verma</td>
+                                <td><span class="badge completed">completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>10:30 AM</td>
+                                <td>Dr. Simantan Basu</td>
+                                <td>Mr. Sujit Suman</td>
+                                <td><span class="badge pending">pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>02:00 PM</td>
+                                <td>Dr. Soham Sarkar</td>
+                                <td>Dr. J.K.Shah</td>
+                                <td><span class="badge pending">pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Urgent Notice</h3>
+                    <div style="color: #dc3545; font-weight: 600; margin-bottom: 10px;">⚠️ Urgent</div>
+                    <p>Oxygen cylinders are low in ward number:03</p>
+                    <hr style="margin: 15px 0; border: none; border-top: 1px solid #eee;">
+                    <div style="color: #ffc107; font-weight: 600; margin-bottom: 10px;">⚡ Warning</div>
+                    <p>Two beds are empty in the ICU</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patients Section -->
+        <div id="patients-content" class="content-section">
+            <h2 class="section-title">Patient details system</h2>
+
+            <div class="card">
+                <h3 class="card-title">New registration of patient</h3>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" placeholder="Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" placeholder="Enter Your Age">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" name="gender" id="male" value="male">
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" name="gender" id="female" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile No</label>
+                        <input type="tel" placeholder="+91XXXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>Adderss</label>
+                        <textarea rows="3" placeholder="Full Adderss"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Emergency contact number</label>
+                        <input type="tel" placeholder="Emergency contact">
+                    </div>
+                    <div class="form-group">
+                        <label>Blood Group</label>
+                        <select>
+                            <option>Select your blood group</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Initial Problem</label>
+                        <textarea rows="3" placeholder="Describe of yourProblem"></textarea>
+                    </div>
+                </form>
+                <button class="btn">Submit</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Patient List</h3>
+                <input type="text" class="search-box" placeholder="🔍 Search patient">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Phone</th>
+                            <th>Blood Group</th>
+                            <th>Addmission Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P001</td>
+                            <td>Somnath Das</td>
+                            <td>40</td>
+                            <td>+917063294864</td>
+                            <td>B+</td>
+                            <td>30/05/2025</td>
+                            <td><span class="badge available">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>P002</td>
+                            <td>Puja Das</td>
+                            <td>32</td>
+                            <td>+918945668746</td>
+                            <td>A+</td>
+                            <td>01/06/2025</td>
+                            <td><span class="badge available">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>P003</td>
+                            <td>Akush Pal</td>
+                            <td>50</td>
+                            <td>+918845699725</td>
+                            <td>O+</td>
+                            <td>02/06/2025</td>
+                            <td><span class="badge busy">Under Treatment</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Doctors Section -->
+        <div id="doctors-content" class="content-section">
+            <h2 class="section-title">Doctor information Details</h2>
+
+            <div class="card">
+                <h3 class="card-title">New Doctor registration</h3>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Doctor Name</label>
+                        <input type="text" placeholder="Doctor [Name]">
+                    </div>
+                    <div class="form-group">
+                        <label>Specialty</label>
+                        <select>
+                            <option>Select Your Specialty</option>
+                            <option>Cardiologist</option>
+                            <option>Dentist</option>
+                            <option>Optometrist</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Degree</label>
+                        <input type="text" placeholder="MBBS, MD, MS Etc">
+                    </div>
+                    <div class="form-group">
+                        <label>Experience</label>
+                        <input type="number" placeholder="Experience [Years]">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+91XXXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>OPT number</label>
+                        <input type="text" placeholder="OPT Number">
+                    </div>
+                    <div class="form-group">
+                        <label>visit Fess</label>
+                        <input type="number" placeholder="₹RS">
+                    </div>
+                </form>
+                <button class="btn">Submit only Doctor</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Doctor List</h3>
+                <input type="text" class="search-box" placeholder="🔍 Search doctors">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Doctor ID</th>
+                            <th>Name</th>
+                            <th>Specialty</th>
+                            <th>OPT</th>
+                            <th>Phone</th>
+                            <th>visit Fess</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>D001</td>
+                            <td>Dr. Arabinda Roy</td>
+                            <td>Cardiologist</td>
+                            <td>101</td>
+                            <td>+918997856874</td>
+                            <td>₹1500</td>
+                            <td><span class="badge available">available</span></td>
+                        </tr>
+                        <tr>
+                            <td>D002</td>
+                            <td>Dr. Ganesh Pandura Pujari</td>
+                            <td>Neurologist</td>
+                            <td>203</td>
+                            <td>+91745596587</td>
+                            <td>₹4000</td>
+                            <td><span class="badge busy">busy</span></td>
+                        </tr>
+                        <tr>
+                            <td>D003</td>
+                            <td>Dr. Ms. Aishani Som</td>
+                            <td>Orthopedist</td>
+                            <td>305</td>
+                            <td>+9179985625847</td>
+                            <td>₹1500</td>
+                            <td><span class="badge available">available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Appointments Section -->
+        <div id="appointments-content" class="content-section">
+            <h2 class="section-title">Appointment Management</h2>
+
+            <div class="card">
+                <h3 class="card-title">New Appointment</h3>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <select>
+                            <option>Choose Patient</option>
+                            <option>Somnath Das</option>
+                            <option>Anjali Das</option>
+                            <option>Akush Roy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Doctor</label>
+                        <select>
+                            <option>Choose Doctor</option>
+                            <option>Dr. Arabinda Roy-Cardiologist</option>
+                            <option>Dr. Ganesh Pandura Pujar-Neurologist</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time">
+                    </div>
+                    <div class="form-group">
+                        <label>Appointment Type</label>
+                        <select>
+                            <option>General Checkup</option>
+                            <option>Follow-Up Visit</option>
+                            <option>Urgent Advice</option>
+                            <option>Test Report</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Purpose</label>
+                        <textarea rows="3" placeholder="Explain the reason for the Appointment"></textarea>
+                    </div>
+                </form>
+                <button class="btn">Book Appointment</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Appointment List</h3>
+                <input type="text" class="search-box" placeholder="🔍 Search Appointment">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Appointment ID</th>
+                            <th>Patient Name</th>
+                            <th>doctor</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A001</td>
+                            <td>Somnath Roy</td>
+                            <td>Dr. Arabinda Roy</td>
+                            <td>09/06/2025</td>
+                            <td>10:00 AM</td>
+                            <td>General Checkup</td>
+                            <td><span class="badge completed">completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>A002</td>
+                            <td>Ahush Das</td>
+                            <td>Dr. Arabinda Roy</td>
+                            <td>15/06/2025</td>
+                            <td>10:30 AM</td>
+                            <td>Follow-Up visit</td>
+                            <td><span class="badge pending">pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>A003</td>
+                            <td>Anjali Das</td>
+                            <td>Dr. Ms. Aishani Som</td>
+                            <td>25/06/2025</td>
+                            <td>01:30 PM</td>
+                            <td>Urgent Advice</td>
+                            <td><span class="badge pending">pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Billing Section -->
+        <div id="billing-content" class="content-section">
+            <h2 class="section-title">Billing System</h2>
+
+            <div class="card">
+                <h3 class="card-title">Create a New bill</h3>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <select>
+                            <option>Choose patient</option>
+                            <option>Puja Das</option>
+                            <option>Anjali Das</option>
+                            <option>Akush Roy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Type of Service</label>
+                        <select>
+                            <option>Choose your Service</option>
+                            <option>Doctor visit</option>
+                            <option>Lab Test</option>
+                            <option>Medicine</option>
+                            <option>Bed Charge</option>
+                            <option>Operation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="number" placeholder="Quantity">
+                    </div>
+                    <div class="form-group">
+                        <label>unit Price</label>
+                        <input type="number" placeholder="unit Price">
+                    </div>
+                    <div class="form-group">
+                        <label>Total Amount (₹)</label>
+                        <input type="number" placeholder="Total Amount" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Discount (%)</label>
+                        <input type="number" placeholder="Discount">
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Type</label>
+                        <select>
+                            <option>Cash</option>
+                            <option>Card</option>
+                            <option>Mobile Banking</option>
+                            <option>UPI</option>
+                            <option>Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Special Note</label>
+                        <textarea rows="3" placeholder="Extra Details"></textarea>
+                    </div>
+                </form>
+                <button class="btn">Generate the Bill</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">List of Bill</h3>
+                <input type="text" class="search-box" placeholder="🔍 Search Bill.">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Patient Name</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Total Amount</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>B001</td>
+                            <td>Akush Dad</td>
+                            <td>Doctor visit</td>
+                            <td>10/06/2025</td>
+                            <td>₹1500</td>
+                            <td>UPI</td>
+                            <td><span class="badge completed">completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>B002</td>
+                            <td>Anjali Das</td>
+                            <td>Lab Test</td>
+                            <td>20/06/2025</td>
+                            <td>₹800</td>
+                            <td>Card</td>
+                            <td><span class="badge completed">completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>B003</td>
+                            <td>Somnath Das</td>
+                            <td>Bed Charge</td>
+                            <td>03/06/2025</td>
+                            <td>₹30000</td>
+                            <td>Cash</td>
+                            <td><span class="badge pending">pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">₹800000</div>
+                    <div class="stat-label">Today Income(₹)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">₹1540000</div>
+                    <div class="stat-label">Monthly Income</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">pending Bill</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Collection Rate</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pharmacy Section -->
+        <div id="pharmacy-content" class="content-section">
+            <h2 class="section-title">Pharmacy Management System</h2>
+
+            <div class="card">
+                <h3 class="card-title">Add new Medicine</h3>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Medicine name</label>
+                        <input type="text" placeholder="Full Name of Medicine">
+                    </div>
+                    <div class="form-group">
+                        <label>Generic Name</label>
+                        <input type="text" placeholder="Generic Name">
+                    </div>
+                    <div class="form-group">
+                        <label>company</label>
+                        <input type="text" placeholder="Name of company">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select>
+                            <option>Choose your Category</option>
+                            <option>Tablet</option>
+                            <option>Capsule</option>
+                            <option>Syrup</option>
+                            <option>Injection</option>
+                            <option> Cream/Malang</option>
+                            <option> Drops</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dimensions</label>
+                        <input type="text" placeholder="Example: 500mg">
+                    </div>
+                    <div class="form-group">
+                        <label>Stock Quantity</label>
+                        <input type="number" placeholder="Current Stock">
+                    </div>
+                    <div class="form-group">
+                        <label>Unit Price</label>
+                        <input type="number" placeholder="₹RS">
+                    </div>
+                    <div class="form-group">
+                        <label>Expiry date</label>
+                        <input type="date">
+                    </div>
+                </form>
+                <button class="btn">Add Medicine</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Prescription Preparation</h3>
+                <form class="form-grid">
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <select>
+                            <option>Choose Patient</option>
+                            <option>Anjali Das</option>
+                            <option>Puja Pal</option>
+                            <option>Akush Roy</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Doctor Name</label>
+                        <select>
+                            <option>Choose your Doctor</option>
+                            <option>Dr. Ms. Aishani Som</option>
+                            <option>Dr. Arabinda Roy</option>
+                            <option>Dr. Ms. Aishani Som</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Medicine01</label>
+                        <select>
+                            <option>Choose your Medicine</option>
+                            <option>Paracetamol 500mg</option>
+                            <option>Amoxicllin250mg</option>
+                            <option>Cetirizine 20mg</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dimensions & Rules</label>
+                        <input type="text" placeholder="Take after food;do not exceed 4g per day">
+                    </div>
+                    <div class="form-group">
+                        <label>Medicine02</label>
+                        <select>
+                            <option>Choose your Medicine</option>
+                            <option>Metfomin 500mg</option>
+                            <option>Omrprazole250mg</option>
+                            <option>Loratadine 20mg</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Dimensions & Rules</label>
+                        <input type="text" placeholder="Take befor food;do not exceed 5g per day">
+                    </div>
+                    <div class="form-group">
+                        <label>Special Instructions</label>
+                        <textarea rows="3" placeholder="Befor Eating/After Eating"></textarea>
+                    </div>
+                </form>
+                <button class="btn">Create Prescription</button>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Medicine Stock</h3>
+                <input type="text" class="search-box" placeholder="🔍 Surch Medicine">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Medicine Name</th>
+                            <th>Generic name</th>
+                            <th>company</th>
+                            <th>stock</th>
+                            <th>Price</th>
+                            <th>Expire</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Napa 500mg</td>
+                            <td>Paracetamol</td>
+                            <td>Beximco</td>
+                            <td>500</td>
+                            <td>₹500</td>
+                            <td>10-05-30</td>
+                            <td><span class="badge available">available</span></td>
+                        </tr>
+                        <tr>
+                            <td>Amoxin 250mg</td>
+                            <td>Amoxicillin</td>
+                            <td>Square</td>
+                            <td>25</td>
+                            <td>₹25</td>
+                            <td>09-06-35</td>
+                            <td><span class="badge pending">Low Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td>Losec 20mg</td>
+                            <td>Omeprazole</td>
+                            <td>Incepta</td>
+                            <td>200</td>
+                            <td>₹12</td>
+                            <td>03-08-40</td>
+                            <td><span class="badge available">available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2000</div>
+                    <div class="stat-label">Total Medicine type</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25</div>
+                    <div class="stat-label">Low Stock</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">Coming soon Expire</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">₹450000</div>
+                    <div class="stat-label">Today Sales</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
